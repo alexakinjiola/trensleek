@@ -158,3 +158,5 @@ html,body{max-width:100%;overflow-x:hidden}
 .ftr-c .ms,.ftr-c .ftr-ic{flex:none;width:20px;height:20px;font-size:20px;line-height:20px;margin-top:2px;color:var(--blue);display:inline-flex;align-items:center;justify-content:center}
 .ftr-c .ftr-ic svg{width:17px;height:17px}
 .ftr-c a,.ftr-c span:not(.ms):not(.ftr-ic){line-height:1.5}
+/* Icons inside column cards keep their own width instead of stretching */
+.wa-card>.ms,.office>.ms,.jstep>.ic,.val>.ms{align-self:flex-start}
