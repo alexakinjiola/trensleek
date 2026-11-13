@@ -90,18 +90,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="stack" style={{ paddingTop: 8 }}>
             <p className="lead lead-ink">{s.overview1}</p>
             <p className="muted">{s.overview2}</p>
-            <p className="small muted" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-              {s.scopeToConfirm ? (
-                <>
-                  <Tbc>Scope to confirm</Tbc>Drafted as travel escort and personal assistance. Trensleek to confirm the exact
-                  scope.
-                </>
-              ) : (
-                <>
-                  <Tbc>Draft</Tbc>Draft copy for Trensleek’s review and approval.
-                </>
-              )}
-            </p>
+            {s.scopeToConfirm && (
+              <p className="small muted" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+                <Tbc>Scope to confirm</Tbc>Drafted as travel escort and personal assistance. Trensleek to confirm the exact
+                scope.
+              </p>
+            )}
           </div>
         </div>
       </section>

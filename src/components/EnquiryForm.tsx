@@ -285,7 +285,7 @@ export default function EnquiryForm() {
       <div className="fsub">
         <p className="fhint" id="form-note" style={{ maxWidth: 360 }}>
           Fields marked <span className="req">*</span> are required. We only use your details to respond to this
-          enquiry. <Link href="/contact#privacy">Privacy notice</Link>
+          enquiry. <Link href="/privacy">Privacy notice</Link>
         </p>
         <button type="submit" className="btn btn-red" disabled={status === "loading"} aria-busy={status === "loading"}>
           {status === "loading" ? (

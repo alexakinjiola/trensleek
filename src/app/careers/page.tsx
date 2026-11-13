@@ -32,9 +32,9 @@ export default function CareersPage() {
           </>
         }
         crumbs={[{ label: "Careers" }]}
-        card={{ tag: "Recruitment email", title: SITE.careersEmail, href: CAREERS_MAILTO, image: "desk" }}
+        card={{ tag: "Recruitment", title: "Email your CV to our team", href: CAREERS_MAILTO, image: "desk" }}
         quick={[
-          { icon: "mail", label: "Send your CV", value: SITE.careersEmail, href: CAREERS_MAILTO },
+          { icon: "mail", label: "Send your CV", value: "Email our recruitment team", href: CAREERS_MAILTO },
           { icon: "description", label: "Attach", value: "Your up-to-date CV", href: "#apply" },
           { icon: "diversity_3", label: "We are", value: "An equal-opportunity employer", href: "#eeo" },
           { icon: "apartment", label: "About us", value: "Who we are", href: "/about" },

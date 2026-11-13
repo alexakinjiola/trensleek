@@ -83,7 +83,7 @@ export default function AboutPage() {
 
       <section className="sec navy on-dark" aria-labelledby="vm-title">
         <div className="wrap">
-          <h2 id="vm-title" className="eyebrow">
+          <h2 id="vm-title" className="eyebrow" style={{ marginBottom: 48 }}>
             Vision &amp; mission
           </h2>
           <div className="vm-grid">
@@ -124,7 +124,6 @@ export default function AboutPage() {
                 Management team
               </h2>
             </div>
-            <Tbc>Placeholder photos · final portraits to follow</Tbc>
           </div>
           <div className="team2">
             {TEAM.map((t, k) => (
@@ -140,7 +139,6 @@ export default function AboutPage() {
                   </h3>
                   <p className="tm2-role">{t.role}</p>
                   <div className="tm2-bio">
-                    <Tbc>Biography to follow</Tbc>
                     <p>
                       A short profile of {plainName(t.name)}: professional background, experience and their focus at
                       Trensleek Travels and Tour.

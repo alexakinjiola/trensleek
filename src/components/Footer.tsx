@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SERVICES } from "@/lib/services";
 import { NAV, SITE, whatsappLink, enquiryLink } from "@/lib/site";
-import { Icon, LogoInner, SocialLinks, Turbulence } from "./primitives";
+import { BrandIcon, Icon, LogoInner, SocialLinks, Turbulence } from "./primitives";
 
 export default function Footer() {
   return (
@@ -19,7 +19,7 @@ export default function Footer() {
               </h2>
               <div className="btns">
                 <a className="btn btn-wa" href={whatsappLink()} target="_blank" rel="noopener">
-                  <Icon name="chat" />
+                  <BrandIcon name="whatsapp" size={18} />
                   Chat with Us on WhatsApp
                 </a>
                 <Link className="btn btn-light" href={enquiryLink()}>
@@ -75,7 +75,9 @@ export default function Footer() {
                   <a href={SITE.phoneHref}>{SITE.phoneDisplay}</a>
                 </li>
                 <li className="ftr-c">
-                  <Icon name="chat" />
+                  <span className="ftr-ic" aria-hidden="true">
+                    <BrandIcon name="whatsapp" size={17} />
+                  </span>
                   <a href={whatsappLink()} target="_blank" rel="noopener">
                     WhatsApp us
                   </a>
@@ -97,7 +99,7 @@ export default function Footer() {
           <div className="ftr2-bot">
             <span>© {new Date().getFullYear()} {SITE.legalName}. All rights reserved.</span>
             <span style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-              <Link href="/contact#privacy">Privacy notice</Link>
+              <Link href="/privacy">Privacy notice</Link>
               <a href={SITE.url}>www.trensleektravels.com</a>
             </span>
           </div>

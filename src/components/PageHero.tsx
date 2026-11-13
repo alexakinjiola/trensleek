@@ -123,7 +123,7 @@ export default function PageHero({
         </div>
         {card && (
           <Anchor href={card.href} external={card.external} className="hs-card">
-            <Img name={card.image} alt="" className="" sizes="84px" />
+            <Img name={card.image} alt="" className="" sizes="84px" eager />
             <span>
               <small>{card.tag}</small>
               <strong>{card.title}</strong>

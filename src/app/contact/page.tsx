@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import EnquiryForm from "@/components/EnquiryForm";
 import PageHero from "@/components/PageHero";
-import { Icon, SocialLinks, Tbc } from "@/components/primitives";
+import { Icon, SocialLinks } from "@/components/primitives";
 import { SITE, mapsLink, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -83,7 +84,7 @@ export default function ContactPage() {
             <div>
               <p style={{ fontWeight: 700, fontSize: 19, letterSpacing: "-.02em" }}>Follow Trensleek</p>
               <p className="small muted" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", marginTop: 6 }}>
-                <Tbc>Handles to confirm</Tbc>Links open a search until official profiles are supplied.
+                Connect with us on LinkedIn, Instagram, Facebook and WhatsApp.
               </p>
             </div>
             <SocialLinks variant="light" />
@@ -128,11 +129,12 @@ export default function ContactPage() {
           <div className="stack" style={{ gap: 16 }}>
             <p className="muted">
               We only ask for the details we need to respond to your enquiry, and we use them for that purpose alone. Your
-              information is sent securely and is not shared publicly.
+              information is sent securely, never sold, and handled in line with the Nigeria Data Protection Act 2023.
             </p>
-            <p className="small" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-              <Tbc>To confirm</Tbc>Full privacy notice to be supplied and approved by Trensleek.
-            </p>
+            <Link className="tlink" style={{ alignSelf: "flex-start" }} href="/privacy">
+              Read our full privacy notice
+              <Icon name="arrow_outward" />
+            </Link>
           </div>
         </div>
       </section>
