@@ -125,8 +125,9 @@ html,body{max-width:100%;overflow-x:hidden}
 @keyframes pageIn{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
 
 /* Nav link + footer link micro-motion */
-.ftr2 ul a{display:inline-block;transition:transform .3s var(--ease),color .2s}
-.ftr2 ul a:hover{transform:translateX(4px);text-decoration:none!important}
+/* Footer text links nudge on hover (social buttons excluded: they keep their centred icon) */
+.ftr2 ul:not(.socs) a{display:inline-block;transition:transform .3s var(--ease),color .2s}
+.ftr2 ul:not(.socs) a:hover{transform:translateX(4px);text-decoration:none!important}
 .dcard .zoom img{transition:transform .9s var(--ease)!important}
 .dcard:hover .zoom img{transform:scale(1.12)}
 .olist li{transition:background-color .3s,padding .4s var(--ease)}
@@ -147,3 +148,13 @@ html,body{max-width:100%;overflow-x:hidden}
   .hdr-ov.is-hidden{transform:none}
 }
 @media print{.fab-stack,.read-progress{display:none}}
+
+/* ===== Footer icon fixes ===== */
+/* Social buttons: icon always dead-centre in the circle */
+.tk .soc{display:inline-flex!important;align-items:center;justify-content:center;flex:none;line-height:0;padding:0}
+.tk .soc svg{display:block;flex:none}
+/* Contact list: icons share one size, colour and baseline with their text */
+.ftr-c{display:flex;align-items:flex-start;gap:12px}
+.ftr-c .ms,.ftr-c .ftr-ic{flex:none;width:20px;height:20px;font-size:20px;line-height:20px;margin-top:2px;color:var(--blue);display:inline-flex;align-items:center;justify-content:center}
+.ftr-c .ftr-ic svg{width:17px;height:17px}
+.ftr-c a,.ftr-c span:not(.ms):not(.ftr-ic){line-height:1.5}
