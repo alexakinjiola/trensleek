@@ -1,12 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SERVICES } from "@/lib/services";
 import { Icon, Img } from "../primitives";
 
 export default function ServicesCarousel() {
   const track = useRef<HTMLDivElement>(null);
+  const [edge, setEdge] = useState({ start: true, end: false });
+
+  useEffect(() => {
+    const el = track.current;
+    if (!el) return;
+    const update = () =>
+      setEdge({ start: el.scrollLeft < 8, end: el.scrollLeft + el.clientWidth > el.scrollWidth - 8 });
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      el.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   const scroll = (dir: 1 | -1) => {
     const el = track.current;
@@ -26,10 +41,10 @@ export default function ServicesCarousel() {
             </h2>
           </div>
           <div className="arrows">
-            <button type="button" className="arw" aria-label="Previous services" onClick={() => scroll(-1)}>
+            <button type="button" className="arw" aria-label="Previous services" onClick={() => scroll(-1)} disabled={edge.start}>
               <Icon name="arrow_back" />
             </button>
-            <button type="button" className="arw dark" aria-label="Next services" onClick={() => scroll(1)}>
+            <button type="button" className="arw dark" aria-label="Next services" onClick={() => scroll(1)} disabled={edge.end}>
               <Icon name="arrow_forward" />
             </button>
           </div>

@@ -18,6 +18,31 @@ export default function Header() {
   const openBtn = useRef<HTMLButtonElement>(null);
   const closeBtn = useRef<HTMLButtonElement>(null);
   const dialog = useRef<HTMLDivElement>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  // Solid bar once past the hero; hide while scrolling down, reveal on scroll up.
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled(y > 80);
+        if (Math.abs(y - lastY) > 6) {
+          setHidden(y > lastY && y > 420);
+          lastY = y;
+        }
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    raf = requestAnimationFrame(onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   // Close the menu when the route changes.
   const [lastPath, setLastPath] = useState(pathname);
@@ -57,7 +82,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="hdr hdr-ov">
+    <header className={`hdr hdr-ov${scrolled ? " is-scrolled" : ""}${hidden && !open ? " is-hidden" : ""}`}>
       <div className="wrap hdr-in">
         <Link href="/" className="logo" aria-label="Trensleek Travels and Tour, home">
           <LogoInner />

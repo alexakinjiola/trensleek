@@ -65,3 +65,85 @@ html,body{max-width:100%;overflow-x:hidden}
 @media (max-width:1080px){.legal-grid{grid-template-columns:1fr;gap:40px}.legal-aside{position:static}}
 @media (max-width:760px){.legal-aside{padding:20px 16px}.legal-sec{padding:28px 0}.legal-h{gap:12px}}
 @media print{.hdr,.ftr2,.ftr-space,.hero2,.planner,.legal-aside{display:none!important}.legal-grid{display:block}}
+
+/* ===== UI fixes (review pass) ===== */
+/* Contact method: legend sits above the three options, never inside the row */
+.form fieldset.radios legend{float:none!important;width:auto;padding:0 0 12px;margin:0}
+/* Long recruitment email wraps cleanly at the @ instead of mid-word */
+.email-big{font-size:clamp(22px,2.1vw,32px)!important;overflow-wrap:anywhere;word-break:normal;line-height:1.25}
+.hs-card strong{overflow-wrap:anywhere}
+.qi strong{overflow-wrap:anywhere}
+
+/* ===== Sleek interactions ===== */
+/* Fixed header: transparent over the hero, solid navy bar once scrolling, tucks away on scroll down */
+.hdr-ov{position:fixed!important;z-index:40;transition:transform .5s var(--ease),top .4s var(--ease)}
+.hdr-ov .hdr-in{transition:height .4s var(--ease),background-color .4s,box-shadow .4s,border-radius .4s}
+.hdr-ov.is-scrolled{top:10px!important}
+.hdr-ov.is-scrolled .hdr-in{height:68px;background:rgba(7,26,58,.97);border-radius:22px;box-shadow:0 18px 40px -20px rgba(7,26,58,.6)}
+.hdr-ov.is-hidden{transform:translateY(calc(-100% - 24px))}
+.hdr-ov .logo-w,.hdr-ov .mk{transition:transform .4s var(--ease)}
+.hdr-ov.is-scrolled .mk{transform:scale(.88)}
+
+/* Reading progress */
+.read-progress{position:fixed;left:0;right:0;top:0;height:3px;z-index:70;transform-origin:left;background:linear-gradient(90deg,var(--red),var(--blue2));pointer-events:none;transition:transform .12s linear}
+
+/* Floating actions */
+.fab-stack{position:fixed;right:20px;bottom:20px;z-index:45;display:flex;flex-direction:column;align-items:center;gap:12px}
+.fab{position:relative;width:56px;height:56px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;text-decoration:none;transition:transform .45s var(--ease),opacity .35s,box-shadow .35s,background-color .3s}
+.fab:hover{transform:translateY(-3px)}
+.fab-wa{background:var(--wa);color:#fff;box-shadow:0 16px 34px -14px rgba(7,94,84,.75)}
+.fab-wa:hover{color:#fff;background:#04443C}
+.fab-wa::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(7,94,84,.45);animation:fabpulse 2.8s 1.5s ease-out infinite}
+@keyframes fabpulse{0%{box-shadow:0 0 0 0 rgba(7,94,84,.45)}70%,100%{box-shadow:0 0 0 16px rgba(7,94,84,0)}}
+.fab-tip{position:absolute;right:68px;top:50%;translate:0 -50%;white-space:nowrap;background:var(--navy);color:#fff;font-size:13px;font-weight:600;padding:8px 12px;border-radius:10px;opacity:0;scale:.92;transform-origin:right center;pointer-events:none;transition:opacity .3s,scale .35s var(--ease)}
+.fab-wa:hover .fab-tip,.fab-wa:focus-visible .fab-tip{opacity:1;scale:1}
+.fab-top{width:48px;height:48px;background:#fff;color:var(--navy);box-shadow:var(--sh-sm);opacity:0;pointer-events:none;transform:translateY(12px) scale(.9)}
+.fab-top.is-on{opacity:1;pointer-events:auto;transform:none}
+.fab-top.is-on:hover{transform:translateY(-3px)}
+.fab-top .ms{font-size:22px;position:relative}
+.fab-ring{position:absolute;inset:0;width:100%;height:100%;rotate:-90deg}
+.fab-ring circle{fill:none;stroke:var(--line);stroke-width:2.5}
+.fab-ring .fab-ring-on{stroke:var(--red);stroke-linecap:round;transition:stroke-dashoffset .12s linear}
+
+/* Pointer spotlight on cards */
+.vc,.srv,.val,.office,.tm2,.dcard,.step,.qi,.jstep,.feat,.sc,.rel>a,.wa-card,.form-card{--mx:50%;--my:50%}
+.vc,.val,.office,.tm2,.dcard,.jstep,.wa-card,.form-card,.qi,.step{position:relative;isolation:isolate}
+.vc::before,.val::before,.office::before,.tm2::before,.dcard::before,.jstep::before,.qi::before,.form-card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;transition:opacity .35s;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(21,82,184,.09),transparent 45%)}
+.step::before,.wa-card::before,.jstep.hi::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;transition:opacity .35s;background:radial-gradient(380px circle at var(--mx) var(--my),rgba(255,255,255,.12),transparent 45%)}
+.step{position:relative}
+.vc:hover::before,.val:hover::before,.office:hover::before,.tm2:hover::before,.dcard:hover::before,.jstep:hover::before,.qi:hover::before,.form-card:hover::before,.step:hover::before,.wa-card:hover::before{opacity:1}
+.feat::after,.srv::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(360px circle at var(--mx) var(--my),rgba(255,255,255,.16),transparent 50%)}
+.feat:hover::after,.srv:hover::after{opacity:1}
+
+/* Carousel arrows dim at the ends */
+.arw:disabled{opacity:.35;cursor:default;transform:none!important;background:#fff;color:var(--navy)}
+.track{cursor:grab}
+.track:active{cursor:grabbing}
+
+/* Page transition */
+.page-enter{animation:pageIn .7s var(--ease) both}
+@keyframes pageIn{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+
+/* Nav link + footer link micro-motion */
+.ftr2 ul a{display:inline-block;transition:transform .3s var(--ease),color .2s}
+.ftr2 ul a:hover{transform:translateX(4px);text-decoration:none!important}
+.dcard .zoom img{transition:transform .9s var(--ease)!important}
+.dcard:hover .zoom img{transform:scale(1.12)}
+.olist li{transition:background-color .3s,padding .4s var(--ease)}
+.olist li:hover{padding-left:12px;background:rgba(255,255,255,.6)}
+.inp{transition:border-color .2s,box-shadow .25s,transform .25s var(--ease)}
+.inp:focus{transform:translateY(-1px)}
+
+@media (max-width:760px){
+  .hdr-ov.is-scrolled{top:8px!important}
+  .hdr-ov.is-scrolled .hdr-in{height:62px;border-radius:18px}
+  .fab-stack{right:14px;bottom:14px}
+  .fab{width:52px;height:52px}
+  .fab-top{width:44px;height:44px}
+  .fab-tip{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .page-enter,.fab-wa::after{animation:none!important}
+  .hdr-ov.is-hidden{transform:none}
+}
+@media print{.fab-stack,.read-progress{display:none}}

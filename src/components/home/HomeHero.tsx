@@ -108,7 +108,7 @@ export default function HomeHero() {
       </button>
 
       <Link className="hs-card" href={cur.href}>
-        <Img name={cur.thumb} alt="" className="" sizes="84px" />
+        <Img name={cur.thumb} alt="" className="" sizes="84px" eager />
         <span>
           <small>{cur.tag}</small>
           <strong>{cur.title}</strong>

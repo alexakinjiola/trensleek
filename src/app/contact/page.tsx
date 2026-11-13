@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import EnquiryForm from "@/components/EnquiryForm";
 import PageHero from "@/components/PageHero";
-import { Icon, SocialLinks, Tbc } from "@/components/primitives";
+import { Icon, SocialLinks } from "@/components/primitives";
 import { SITE, mapsLink, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -84,7 +84,7 @@ export default function ContactPage() {
             <div>
               <p style={{ fontWeight: 700, fontSize: 19, letterSpacing: "-.02em" }}>Follow Trensleek</p>
               <p className="small muted" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap", marginTop: 6 }}>
-                <Tbc>Handles to confirm</Tbc>Links open a search until official profiles are supplied.
+                Connect with us on LinkedIn, Instagram, Facebook and WhatsApp.
               </p>
             </div>
             <SocialLinks variant="light" />
