@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import EnquiryForm from "@/components/EnquiryForm";
 import PageHero from "@/components/PageHero";
@@ -128,11 +129,12 @@ export default function ContactPage() {
           <div className="stack" style={{ gap: 16 }}>
             <p className="muted">
               We only ask for the details we need to respond to your enquiry, and we use them for that purpose alone. Your
-              information is sent securely and is not shared publicly.
+              information is sent securely, never sold, and handled in line with the Nigeria Data Protection Act 2023.
             </p>
-            <p className="small" style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-              <Tbc>To confirm</Tbc>Full privacy notice to be supplied and approved by Trensleek.
-            </p>
+            <Link className="tlink" style={{ alignSelf: "flex-start" }} href="/privacy">
+              Read our full privacy notice
+              <Icon name="arrow_outward" />
+            </Link>
           </div>
         </div>
       </section>

@@ -38,3 +38,30 @@ html,body{max-width:100%;overflow-x:hidden}
   .p-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:visible;padding:0 6px}
   .p-tab{justify-content:center;padding:0 8px}
 }
+
+/* ===== Privacy notice (legal page) ===== */
+.legal-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:72px;align-items:start}
+.legal-aside{position:sticky;top:32px;background:var(--bg);border-radius:22px;padding:28px 26px}
+.legal-toc{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.legal-toc a{display:flex;gap:12px;align-items:baseline;min-height:40px;padding:9px 10px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;line-height:1.35;transition:background-color .2s,color .2s}
+.legal-toc a:hover{background:#fff;color:var(--blue)}
+.legal-n{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--red);flex:none}
+.legal-meta{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding-bottom:28px;margin-bottom:8px;border-bottom:1px solid var(--line);font-size:15px;color:var(--muted)}
+.legal-meta strong{color:var(--ink)}
+.legal-sec{padding:36px 0;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+.legal-h{display:flex;gap:16px;align-items:baseline;font-size:clamp(22px,2vw,28px)!important;font-weight:700!important;letter-spacing:-.025em;line-height:1.25;margin-bottom:16px!important}
+.legal-text{display:flex;flex-direction:column;gap:14px;color:var(--muted);font-size:16px;line-height:1.7;max-width:70ch}
+.legal-text strong{color:var(--ink);font-weight:600}
+.legal-list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.legal-list li::marker{color:var(--red)}
+.legal-dl{margin:0;display:flex;flex-direction:column;gap:6px}
+.legal-dl dt{font-weight:700;color:var(--ink);margin-top:10px}
+.legal-dl dd{margin:0}
+.legal-contact{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.legal-contact li{display:flex;gap:12px;align-items:flex-start}
+.legal-contact .ms{font-size:20px;color:var(--blue);margin-top:3px}
+.legal-contact a{color:var(--navy);font-weight:600}
+.legal .tbc{vertical-align:baseline}
+@media (max-width:1080px){.legal-grid{grid-template-columns:1fr;gap:40px}.legal-aside{position:static}}
+@media (max-width:760px){.legal-aside{padding:20px 16px}.legal-sec{padding:28px 0}.legal-h{gap:12px}}
+@media print{.hdr,.ftr2,.ftr-space,.hero2,.planner,.legal-aside{display:none!important}.legal-grid{display:block}}

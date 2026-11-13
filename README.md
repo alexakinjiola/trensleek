@@ -22,6 +22,7 @@ Built with **Next.js (App Router) + React + TypeScript**, exported as a fully st
 | `/about/` | About Us |
 | `/contact/` | Contact Us (enquiry form) |
 | `/careers/` | Careers |
+| `/privacy/` | Privacy notice (draft, NDPA 2023) |
 | 404 | Custom "different flight" page |
 
 Plus `/sitemap.xml` and `/robots.txt`.
@@ -89,7 +90,7 @@ These are marked on the site with "To confirm" / "Draft" tags:
 - Approval of the drafted service copy, and the exact scope of **Escort Services**
 - Management team portraits and biographies; Rokibat's surname; confirmation of Miss Lagbaja's name
 - Official social media profile URLs (links currently open a platform search) in `src/lib/site.ts`
-- Full privacy notice
+- Legal review of the drafted privacy notice (`src/app/privacy/page.tsx`), including retention periods and whether to name a Data Protection Officer
 - Official logo / brand colour values (the logo in the site is a concept)
 - Partner logos and confirmation of partnership status
 - Enquiry delivery endpoint (see Configuration)

@@ -97,7 +97,7 @@ export default function Footer() {
           <div className="ftr2-bot">
             <span>© {new Date().getFullYear()} {SITE.legalName}. All rights reserved.</span>
             <span style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-              <Link href="/contact#privacy">Privacy notice</Link>
+              <Link href="/privacy">Privacy notice</Link>
               <a href={SITE.url}>www.trensleektravels.com</a>
             </span>
           </div>
