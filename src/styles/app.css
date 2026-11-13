@@ -1,0 +1,40 @@
+/* React-build helpers (classes that were inline styles on the design canvas) */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.row-head{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
+.linkbtn{background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;margin-top:12px;font-family:inherit;padding-left:0;padding-right:0}
+.split-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:32px;align-items:end;margin-bottom:56px}
+.center-head{text-align:center;max-width:720px;margin:0 auto 56px}
+.center-head .eyebrow{justify-content:center}
+.stack{display:flex;flex-direction:column;gap:22px}
+.lead-ink{color:var(--ink)!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Never allow sideways scrolling on small screens */
+html,body{max-width:100%;overflow-x:hidden}
+@media (max-width:760px){.split-head{grid-template-columns:1fr;gap:16px;margin-bottom:36px}.row-head{margin-bottom:28px}}
+.help-row{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:center}
+.vm-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px 80px}
+.vm-label{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#FFB3BF;margin-bottom:20px!important}
+.vm-text{font-size:clamp(28px,3.2vw,48px);line-height:1.12}
+.rel-num{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--muted);margin-bottom:8px!important}
+.follow-row{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;justify-content:space-between;margin-top:8px;padding:28px 32px;background:var(--bg);border-radius:22px}
+.nf-tb{margin-bottom:8px}
+@media (max-width:760px){.vm-grid{grid-template-columns:1fr;gap:40px}.follow-row{padding:22px 20px}.nf-tb .tb{transform:scale(.8)}}
+
+/* ===== QA fixes from the responsive pass ===== */
+/* Breadcrumb links must stay legible on the dark hero photo */
+.hs-in .crumbs a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.45)}
+.hs-in .crumbs a:hover{color:#fff;text-decoration-color:#fff}
+.hs-in .crumbs [aria-current]{color:rgba(255,255,255,.85)}
+@media (max-width:760px){
+  /* 12-column grids collapse to one column on phones */
+  .g12>*{grid-column:1/-1!important}
+  /* Home hero: keep slide + motion controls above the overlapping planner */
+  .hero2:not(.inner) .hs-in{padding-bottom:150px}
+  .hero2:not(.inner) .hs-nav{bottom:82px;right:14px;gap:6px}
+  .hero2:not(.inner) .hs-dot{width:40px;height:40px}
+  .hero2:not(.inner) .hs-motion{bottom:84px;left:14px;min-height:40px}
+  /* Planner tabs: 2 x 2 instead of a cut-off scrolling row */
+  .p-tabs{display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:visible;padding:0 6px}
+  .p-tab{justify-content:center;padding:0 8px}
+}
