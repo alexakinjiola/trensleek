@@ -32,7 +32,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
   const i = SERVICES.findIndex((x) => x.slug === s.slug);
   const related = [1, 2, 3].map((k) => SERVICES[(i + k) % SERVICES.length]);
-  const need = s.key === "EscortServices" ? "request" : s.short.toLowerCase();
+  const need = s.key === "EscortServices" ? "escort or convoy" : s.short.toLowerCase();
 
   return (
     <>

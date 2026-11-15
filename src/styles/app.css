@@ -160,3 +160,17 @@ html,body{max-width:100%;overflow-x:hidden}
 .ftr-c a,.ftr-c span:not(.ms):not(.ftr-ic){line-height:1.5}
 /* Icons inside column cards keep their own width instead of stretching */
 .wa-card>.ms,.office>.ms,.jstep>.ic,.val>.ms{align-self:flex-start}
+
+/* ===== Team biographies (expandable) ===== */
+.tm2-ph img{object-position:center 22%}
+.tm2-bio.has-bio p{font-style:normal;color:var(--muted)}
+.tm2-bio-body{max-height:5.1em;overflow:hidden;position:relative;transition:max-height .6s var(--ease)}
+.tm2-bio-inner{min-height:0;display:flex;flex-direction:column;gap:10px}
+.tm2-bio-body::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2.4em;background:linear-gradient(180deg,rgba(255,255,255,0),#fff);pointer-events:none;transition:opacity .35s}
+.tm2-bio.is-open .tm2-bio-body{max-height:40em}
+.tm2-bio.is-open .tm2-bio-body::after{opacity:0}
+.tm2-more{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0;margin-top:2px;background:none;border:0;cursor:pointer;font:600 14px var(--font-sans);color:var(--blue);transition:color .2s}
+.tm2-more:hover{color:var(--red)}
+.tm2-more .ms{font-size:20px;transition:transform .4s var(--ease)}
+.tm2-bio.is-open .tm2-more .ms{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.tm2-bio-body{transition:none}}
