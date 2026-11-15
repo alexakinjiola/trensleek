@@ -12,7 +12,7 @@ export const SITE = {
   phoneDisplay: "+234 907 3108 020",
   phoneHref: "tel:+2349073108020",
   whatsappNumber: "2349073108020",
-  email: "info@trensleektravels.com",
+  email: "trensleekglobaltravels@gmail.com",
   careersEmail: "trensleekcareers@gmail.com",
   offices: [
     {

@@ -156,48 +156,48 @@ export const SERVICES: Service[] = [
     "name": "Escort Services",
     "short": "Escort Services",
     "num": "04",
-    "description": "Personal assistance for travellers who'd like support from check-in to arrival.",
-    "cardImage": "silhouette",
-    "cardImageHome": "silhouette",
-    "cardAlt": "A traveller with a suitcase at a terminal window, watching a plane pass",
-    "heroImage": "window-sunset",
-    "heroAlt": "The view from an aircraft window at sunset",
+    "description": "Coordinated vehicle escorts and convoys for VIPs, executives and delegations on the move.",
+    "cardImage": "escort-convoy",
+    "cardImageHome": "escort-convoy",
+    "cardAlt": "An aerial view of a convoy of dark cars with motorcycle outriders on a highway",
+    "heroImage": "escort-hero",
+    "heroAlt": "Black SUVs travelling with a motorcycle escort along a city street",
     "titleA": "Escort",
     "titleB": "Services",
-    "lead": "Personal assistance for travellers who'd like someone by their side, from check-in to arrival.",
-    "overviewTitle": "Support at every step of the journey.",
-    "overview1": "Our escort service provides personal travel assistance for anyone who would value extra support, including first-time flyers, older travellers and VIP guests.",
-    "overview2": "A member of our team can meet you, help with airport formalities and stay with you until you're safely on your way.",
+    "lead": "Secure, professionally coordinated vehicle escorts for VIPs, executives and delegations on the move.",
+    "overviewTitle": "Arrive safely. Move with confidence.",
+    "overview1": "Our escort service arranges coordinated vehicle escorts and convoys for executives, VIP guests, delegations and special events, so you move between airports, hotels and venues safely and on schedule.",
+    "overview2": "Share your itinerary, the number of guests and the vehicles you need. We'll plan the movement with you and handle the arrangements discreetly.",
     "band": [
       {
-        "image": "traveller-lounge",
-        "alt": "A traveller waiting at the departure gate as a plane takes off outside"
+        "image": "escort-convoy",
+        "alt": "An aerial view of a convoy of dark cars with motorcycle outriders on a highway"
       },
       {
-        "image": "handshake",
-        "alt": "Two professionals greeting each other with a handshake"
+        "image": "escort-outrider",
+        "alt": "An escort motorcycle rider leading vehicles through a city street"
       }
     ],
     "offers": [
       {
-        "title": "Airport meet and assist",
-        "text": "We meet you at the airport and help you through check-in and boarding."
+        "title": "Airport transfer escorts",
+        "text": "Escorted pick-ups and drop-offs between the airport, your hotel and your venues."
       },
       {
-        "title": "Accompanied travel",
-        "text": "A team member can travel with you where extra support is needed."
+        "title": "VIP and executive convoys",
+        "text": "Coordinated multi-vehicle movements for executives, dignitaries and their teams."
       },
       {
-        "title": "Arrival assistance",
-        "text": "Help on arrival, from meeting you to coordinating onward transport."
+        "title": "Delegations and events",
+        "text": "Planned convoy movements for delegations, conferences and special occasions."
       },
       {
-        "title": "VIP and protocol support",
-        "text": "Discreet, attentive assistance for executives and VIP guests."
+        "title": "Discreet route planning",
+        "text": "Routes and timings arranged in confidence, with one point of contact throughout."
       }
     ],
-    "whyTitle": "Whatever the request, our values stay the same.",
-    "scopeToConfirm": true
+    "whyTitle": "Safety and discretion, from the first mile to the last.",
+    "scopeToConfirm": false
   },
   {
     "key": "HotelReservation",

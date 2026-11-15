@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import { Icon, Img, Tbc } from "@/components/primitives";
+import { Icon, Img } from "@/components/primitives";
+import TeamBio from "@/components/TeamBio";
 import { ValuesGrid } from "@/components/sections";
 import { enquiryLink } from "@/lib/site";
 
@@ -12,14 +13,33 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about/" },
 };
 
-// TODO(Trensleek): replace placeholder portraits and biographies; confirm Rokibat's surname and Miss Lagbaja's name.
-const TEAM = [
-  { name: "Ayoola Tolulope", role: "Managing Director / CEO", image: "team1" },
-  { name: "Adedoye Bukola", role: "Executive Director", image: "team2" },
-  { name: "Miss Tamedun", role: "Chief Operating Officer", image: "team5" },
-  { name: "Mr Victor Akinwale", role: "Finance Manager", image: "team6" },
-  { name: "Miss Lagbaja", role: "Client Service Manager", image: "team4" },
-  { name: "Rokibat", role: "Business Analyst", image: "team3", note: "Surname to confirm" },
+// Profiles supplied by Trensleek: Ayoola Tolulope and Rokibat Mustapha.
+// TODO(Trensleek): portraits and biographies for the remaining four; confirm Miss Lagbaja's name.
+type Member = { name: string; role: string; image: string; bio?: string[]; placeholder?: boolean };
+
+const TEAM: Member[] = [
+  {
+    name: "Ayoola Tolulope",
+    role: "Managing Director / CEO",
+    image: "team-ayoola",
+    bio: [
+      "Ayoola is a seasoned Nigerian entrepreneur with over 10 years' experience in the travel and tourism industry. She is an Associate Member of Women in Business and holds a bachelor's degree in Economics from Olabisi Onabanjo University.",
+      "At Trensleek Travels and Tour Ltd, Ayoola provides strategic leadership for the overall performance of the business.",
+    ],
+  },
+  { name: "Adedoye Bukola", role: "Executive Director", image: "team2", placeholder: true },
+  { name: "Miss Tamedun", role: "Chief Operating Officer", image: "team5", placeholder: true },
+  { name: "Mr Victor Akinwale", role: "Finance Manager", image: "team6", placeholder: true },
+  { name: "Miss Lagbaja", role: "Client Service Manager", image: "team4", placeholder: true },
+  {
+    name: "Rokibat Mustapha",
+    role: "Business Analyst",
+    image: "team-rokibat",
+    bio: [
+      "Rokibat is an Economics graduate and Business Analyst with an interest in business strategy, data analytics and organisational development.",
+      "She brings an analytical, research-driven approach to understanding business operations, identifying opportunities for improvement and supporting informed decision-making. With a growing background in data analysis and financial evaluation, she is passionate about using data and strategic insight to improve business performance and drive sustainable growth.",
+    ],
+  },
 ];
 
 const plainName = (n: string) => n.replace(/^(Miss|Mr|Mrs|Ms|Dr) /, "");
@@ -129,21 +149,22 @@ export default function AboutPage() {
             {TEAM.map((t, k) => (
               <article className="tm2" key={t.name}>
                 <div className="tm2-ph">
-                  <Img name={t.image} alt={`Placeholder portrait for ${t.name}, ${t.role}`} sizes="(max-width: 760px) 100vw, 33vw" />
+                  <Img name={t.image} alt={t.placeholder ? `Placeholder portrait for ${t.name}, ${t.role}` : `${t.name}, ${t.role} at Trensleek Travels and Tour`} sizes="(max-width: 760px) 100vw, 33vw" />
                   <span className="tm2-n">{`0${k + 1}`}</span>
                 </div>
                 <div className="tm2-info">
-                  <h3 className="tm2-name">
-                    {t.name}
-                    {t.note && <Tbc style={{ fontSize: 10, padding: "3px 8px" }}>{t.note}</Tbc>}
-                  </h3>
+                  <h3 className="tm2-name">{t.name}</h3>
                   <p className="tm2-role">{t.role}</p>
-                  <div className="tm2-bio">
-                    <p>
-                      A short profile of {plainName(t.name)}: professional background, experience and their focus at
-                      Trensleek Travels and Tour.
-                    </p>
-                  </div>
+                  {t.bio ? (
+                    <TeamBio paragraphs={t.bio} />
+                  ) : (
+                    <div className="tm2-bio">
+                      <p>
+                        A short profile of {plainName(t.name)}: professional background, experience and their focus at
+                        Trensleek Travels and Tour.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}
