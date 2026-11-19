@@ -176,3 +176,5 @@ html,body{max-width:100%;overflow-x:hidden}
 @media (prefers-reduced-motion:reduce){.tm2-bio-body{transition:none}}
 /* Number badge stays legible on light/white portrait backgrounds */
 .tm2-n{box-shadow:0 2px 10px rgba(7,26,58,.18);border:1px solid rgba(7,26,58,.08)}
+/* Per-portrait framing: keep the top of the head inside the frame */
+.tm2-ph img[src*="team-bukola"]{object-position:center 4%}
