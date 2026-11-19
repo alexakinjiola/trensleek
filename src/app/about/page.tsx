@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about/" },
 };
 
-// Profiles supplied by Trensleek: Ayoola Tolulope and Rokibat Mustapha.
-// TODO(Trensleek): portraits and biographies for the remaining four; confirm Miss Lagbaja's name.
+// Profiles supplied by Trensleek: Ayoola Tolulope, Esther Ogunwumiju and Rokibat Mustapha.
+// TODO(Trensleek): portraits and biographies for the remaining three; confirm Miss Lagbaja's name.
 type Member = { name: string; role: string; image: string; bio?: string[]; placeholder?: boolean };
 
 const TEAM: Member[] = [
@@ -28,8 +28,16 @@ const TEAM: Member[] = [
     ],
   },
   { name: "Adedoye Bukola", role: "Executive Director", image: "team2", placeholder: true },
+  {
+    name: "Esther Ogunwumiju",
+    role: "Non-Executive Director",
+    image: "team-esther",
+    bio: [
+      "Esther is a Non-Executive Director in charge of corporate governance at Trensleek Travels.",
+      "She is a professionally trained and certified nurse with over six years' cognate experience, as well as a business leader and career coach. Esther is a graduate of Ladoke Akintola University of Technology, Nigeria.",
+    ],
+  },
   { name: "Miss Tamedun", role: "Chief Operating Officer", image: "team5", placeholder: true },
-  { name: "Mr Victor Akinwale", role: "Finance Manager", image: "team6", placeholder: true },
   { name: "Miss Lagbaja", role: "Client Service Manager", image: "team4", placeholder: true },
   {
     name: "Rokibat Mustapha",
