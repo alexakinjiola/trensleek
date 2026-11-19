@@ -88,7 +88,7 @@ public/images/         Photography as WebP, 800px (-sm) and 1600px versions
 These are marked on the site with "To confirm" / "Draft" tags:
 
 - Approval of the drafted service copy (Escort Services is now written as vehicle escorts and convoys)
-- Portraits and biographies for four of the six managers (Ayoola Tolulope and Rokibat Mustapha are done); confirmation of Miss Lagbaja's name
+- Portraits and biographies for Miss Tamedun and Miss Lagbaja (the other four are done); confirmation of Miss Lagbaja's name
 - Official social media profile URLs (links currently open a platform search) in `src/lib/site.ts`
 - Legal review of the drafted privacy notice (`src/app/privacy/page.tsx`), including retention periods and whether to name a Data Protection Officer
 - Official logo / brand colour values (the logo in the site is a concept)

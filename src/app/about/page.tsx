@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about/" },
 };
 
-// Profiles supplied by Trensleek: Ayoola Tolulope and Rokibat Mustapha.
-// TODO(Trensleek): portraits and biographies for the remaining four; confirm Miss Lagbaja's name.
+// Profiles supplied by Trensleek: Ayoola Tolulope, Adedoye Bukola, Esther Ogunwumiju and Rokibat Mustapha.
+// TODO(Trensleek): portraits and biographies for Miss Tamedun and Miss Lagbaja; confirm Miss Lagbaja's name.
 type Member = { name: string; role: string; image: string; bio?: string[]; placeholder?: boolean };
 
 const TEAM: Member[] = [
@@ -27,9 +27,25 @@ const TEAM: Member[] = [
       "At Trensleek Travels and Tour Ltd, Ayoola provides strategic leadership for the overall performance of the business.",
     ],
   },
-  { name: "Adedoye Bukola", role: "Executive Director", image: "team2", placeholder: true },
+  {
+    name: "Adedoye Bukola",
+    role: "Executive Director",
+    image: "team-bukola",
+    bio: [
+      "Bukola is an Executive Director in charge of Customer Management at Trensleek Travels. She previously worked as a Customer Service Officer at Ecobank Nigeria PLC.",
+      "An accomplished fashion designer and entrepreneur, she is the founder of Edens Fashion World and has over 18 years' experience in the fashion industry, where she combines creativity, innovation and business leadership to deliver excellence. She holds a B.Sc. in Accounting from Obafemi Awolowo University, Ile-Ife.",
+    ],
+  },
+  {
+    name: "Esther Ogunwumiju",
+    role: "Non-Executive Director",
+    image: "team-esther",
+    bio: [
+      "Esther is a Non-Executive Director in charge of corporate governance at Trensleek Travels.",
+      "She is a professionally trained and certified nurse with over six years' cognate experience, as well as a business leader and career coach. Esther is a graduate of Ladoke Akintola University of Technology, Nigeria.",
+    ],
+  },
   { name: "Miss Tamedun", role: "Chief Operating Officer", image: "team5", placeholder: true },
-  { name: "Mr Victor Akinwale", role: "Finance Manager", image: "team6", placeholder: true },
   { name: "Miss Lagbaja", role: "Client Service Manager", image: "team4", placeholder: true },
   {
     name: "Rokibat Mustapha",
