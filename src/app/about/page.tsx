@@ -14,8 +14,7 @@ export const metadata: Metadata = {
 };
 
 // All six profiles supplied by Trensleek.
-// TODO(Trensleek): portraits for Faith Emmanuel and Boluwatife Adeniyi (shown as initials until supplied);
-// Boluwatife's course of study.
+// TODO(Trensleek): Boluwatife's course of study.
 type Member = { name: string; role: string; image?: string; bio: string[] };
 
 const TEAM: Member[] = [
@@ -49,6 +48,7 @@ const TEAM: Member[] = [
   {
     name: "Faith Emmanuel",
     role: "Client Service Manager",
+    image: "team-faith",
     bio: [
       "Faith is a young client service professional who ensures every client receives royal treatment through the quality of our service delivery.",
       "Faith is a graduate of Home Economics from the prestigious University of Lagos. In addition to client management, Faith is a skilful social media professional.",
@@ -57,6 +57,7 @@ const TEAM: Member[] = [
   {
     name: "Boluwatife Adeniyi",
     role: "Business Development Officer",
+    image: "team-boluwatife",
     bio: [
       "Boluwatife is a Business Development Officer responsible for lead conversion at Trensleek Travels.",
       "Boluwatife is a graduate of Adekunle Ajasin University, Akungba-Akoko, Ondo State.",

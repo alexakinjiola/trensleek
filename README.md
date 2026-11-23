@@ -105,7 +105,7 @@ public/images/         Photography as WebP, 800px (-sm) and 1600px versions
 These are marked on the site with "To confirm" / "Draft" tags:
 
 - Approval of the drafted service copy (Escort Services is now written as vehicle escorts and convoys)
-- Portraits for Faith Emmanuel and Boluwatife Adeniyi (shown as initials until supplied); Boluwatife's course of study
+- Boluwatife Adeniyi's course of study
 - Official social media profile URLs (links currently open a platform search) in `src/lib/site.ts`
 - Official logo / brand colour values (the logo in the site is a concept)
 - Partner logos and confirmation of partnership status
