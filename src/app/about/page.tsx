@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about/" },
 };
 
-// Profiles supplied by Trensleek: Ayoola Tolulope, Adedoye Bukola, Esther Ogunwumiju and Rokibat Mustapha.
-// TODO(Trensleek): portraits and biographies for Miss Tamedun and Miss Lagbaja; confirm Miss Lagbaja's name.
-type Member = { name: string; role: string; image: string; bio?: string[]; placeholder?: boolean };
+// All six profiles supplied by Trensleek.
+// TODO(Trensleek): Boluwatife's course of study.
+type Member = { name: string; role: string; image?: string; bio: string[] };
 
 const TEAM: Member[] = [
   {
@@ -45,8 +45,24 @@ const TEAM: Member[] = [
       "She is a professionally trained and certified nurse with over six years' cognate experience, as well as a business leader and career coach. Esther is a graduate of Ladoke Akintola University of Technology, Nigeria.",
     ],
   },
-  { name: "Miss Tamedun", role: "Chief Operating Officer", image: "team5", placeholder: true },
-  { name: "Miss Lagbaja", role: "Client Service Manager", image: "team4", placeholder: true },
+  {
+    name: "Faith Emmanuel",
+    role: "Client Service Manager",
+    image: "team-faith",
+    bio: [
+      "Faith is a young client service professional who ensures every client receives royal treatment through the quality of our service delivery.",
+      "Faith is a graduate of Home Economics from the prestigious University of Lagos. In addition to client management, Faith is a skilful social media professional.",
+    ],
+  },
+  {
+    name: "Boluwatife Adeniyi",
+    role: "Business Development Officer",
+    image: "team-boluwatife",
+    bio: [
+      "Boluwatife is a Business Development Officer responsible for lead conversion at Trensleek Travels.",
+      "Boluwatife is a graduate of Adekunle Ajasin University, Akungba-Akoko, Ondo State.",
+    ],
+  },
   {
     name: "Rokibat Mustapha",
     role: "Business Analyst",
@@ -58,7 +74,13 @@ const TEAM: Member[] = [
   },
 ];
 
-const plainName = (n: string) => n.replace(/^(Miss|Mr|Mrs|Ms|Dr) /, "");
+const initials = (n: string) =>
+  n
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 
 export default function AboutPage() {
   return (
@@ -165,22 +187,19 @@ export default function AboutPage() {
             {TEAM.map((t, k) => (
               <article className="tm2" key={t.name}>
                 <div className="tm2-ph">
-                  <Img name={t.image} alt={t.placeholder ? `Placeholder portrait for ${t.name}, ${t.role}` : `${t.name}, ${t.role} at Trensleek Travels and Tour`} sizes="(max-width: 760px) 100vw, 33vw" />
+                  {t.image ? (
+                    <Img name={t.image} alt={`${t.name}, ${t.role} at Trensleek Travels and Tour`} sizes="(max-width: 760px) 100vw, 33vw" />
+                  ) : (
+                    <div className="tm2-mono" aria-hidden="true">
+                      <span>{initials(t.name)}</span>
+                    </div>
+                  )}
                   <span className="tm2-n">{`0${k + 1}`}</span>
                 </div>
                 <div className="tm2-info">
                   <h3 className="tm2-name">{t.name}</h3>
                   <p className="tm2-role">{t.role}</p>
-                  {t.bio ? (
-                    <TeamBio paragraphs={t.bio} />
-                  ) : (
-                    <div className="tm2-bio">
-                      <p>
-                        A short profile of {plainName(t.name)}: professional background, experience and their focus at
-                        Trensleek Travels and Tour.
-                      </p>
-                    </div>
-                  )}
+                  <TeamBio paragraphs={t.bio} />
                 </div>
               </article>
             ))}

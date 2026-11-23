@@ -103,18 +103,24 @@ export default function EnquiryForm() {
       const res = await fetch(ENQUIRY_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
+        // Field names are written as they should read in the notification email.
+        // Formspree uses `email` / `_replyto` as the Reply-To address, `_subject` as the subject line,
+        // and silently drops submissions where the `_gotcha` honeypot is filled.
         body: JSON.stringify({
-          fullName: values.name.trim(),
+          _subject: `New website enquiry: ${values.service} from ${values.name.trim()}`,
+          _replyto: values.email.trim(),
+          _gotcha: values.company,
+          "Full name": values.name.trim(),
           email: values.email.trim(),
-          phone: values.phone.trim(),
-          service: values.service,
-          message: values.message.trim(),
-          preferredContact: values.contact || "No preference",
-          page: typeof window !== "undefined" ? window.location.pathname : "",
-          submittedAt: new Date().toISOString(),
+          "Phone number": values.phone.trim(),
+          "Service of interest": values.service,
+          Message: values.message.trim(),
+          "Preferred contact method": values.contact || "No preference",
+          "Sent from page": typeof window !== "undefined" ? window.location.href : "",
         }),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; errors?: unknown };
+      if (!res.ok || data.ok === false || data.errors) throw new Error(`HTTP ${res.status}`);
       setStatus("success");
       setValues({ ...EMPTY, service: preset });
       setTouched({});

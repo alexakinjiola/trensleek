@@ -29,11 +29,12 @@ export const SITE = {
 } as const;
 
 /**
- * Where the enquiry form posts. Set NEXT_PUBLIC_ENQUIRY_ENDPOINT at build time
- * (e.g. a Formspree, Web3Forms or Getform URL, or your own API).
- * When empty the form tells visitors it is not connected yet — it never fakes success.
+ * Where the enquiry form posts: Trensleek's Formspree form. Formspree emails every
+ * submission to the address set on the form in the Formspree dashboard
+ * (trensleekglobaltravels@gmail.com). NEXT_PUBLIC_ENQUIRY_ENDPOINT overrides it if ever needed.
+ * Success is only shown when Formspree confirms receipt; failures keep the visitor's entries.
  */
-export const ENQUIRY_ENDPOINT = process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT ?? "";
+export const ENQUIRY_ENDPOINT = process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT || "https://formspree.io/f/xljbonzw";
 
 // TODO(Trensleek): replace with official profile URLs once supplied.
 const Q = encodeURIComponent("Trensleek Travels");

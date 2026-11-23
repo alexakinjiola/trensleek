@@ -22,7 +22,7 @@ Built with **Next.js (App Router) + React + TypeScript**, exported as a fully st
 | `/about/` | About Us |
 | `/contact/` | Contact Us (enquiry form) |
 | `/careers/` | Careers |
-| `/privacy/` | Privacy notice (draft, NDPA 2023) |
+| `/privacy/` | Privacy notice (NDPA 2023) |
 | 404 | Custom "different flight" page |
 
 Plus `/sitemap.xml` and `/robots.txt`.
@@ -38,26 +38,43 @@ npm run lint
 npm run build    # static site written to ./out
 ```
 
-## Configuration
+## Enquiry form (Formspree)
 
-| Variable | Purpose |
-|---|---|
-| `NEXT_PUBLIC_ENQUIRY_ENDPOINT` | URL the enquiry form POSTs JSON to (e.g. a Formspree, Web3Forms or Getform endpoint, or your own API). **Until it is set, the form tells visitors it is not connected yet and nothing is sent; it never shows a fake success.** |
+The form posts to Trensleek's Formspree form, `https://formspree.io/f/xljbonzw` (set in `src/lib/site.ts`).
+Formspree emails every submission to the address configured on that form: **trensleekglobaltravels@gmail.com**.
 
-Create `.env.local` for local development:
+Each email arrives with:
+
+- **Subject:** `New website enquiry: <service> from <name>`
+- **Reply-To:** the visitor's email address, so pressing Reply answers the customer directly
+- **Fields:** Full name, email, Phone number, Service of interest, Message, Preferred contact method, Sent from page
+
+A success message is shown only when Formspree confirms receipt. If sending fails, the visitor keeps
+everything they typed and is offered WhatsApp and email instead. A hidden honeypot field stops simple spam bots.
+
+To use a different endpoint (e.g. for testing), set `NEXT_PUBLIC_ENQUIRY_ENDPOINT`, for example in `.env.local`:
 
 ```bash
 NEXT_PUBLIC_ENQUIRY_ENDPOINT=https://formspree.io/f/your-form-id
 ```
 
-The form sends: `fullName`, `email`, `phone`, `service`, `message`, `preferredContact`, `page`, `submittedAt`.
-A success message is shown only when the endpoint returns a 2xx response.
+### Keeping enquiries out of spam
+
+In Formspree (Form → Settings): set the target email to `trensleekglobaltravels@gmail.com` and verify it;
+optionally add `trensleektravels.com` (and the Vercel domain) under allowed domains.
+
+In Gmail (trensleekglobaltravels@gmail.com):
+
+1. Add Formspree's sending address (shown on the first notification, e.g. `noreply@formspree.io`) to Contacts.
+2. Search `from:formspree.io`, choose **Create filter**, tick **Never send it to Spam**, **Always mark it as important**
+   and **Apply the label** "Website enquiries".
+3. If an enquiry ever lands in Spam, open it and click **Not spam**.
 
 ## Deployment
 
 `npm run build` produces plain HTML/CSS/JS in `out/`. Host it anywhere that serves static files:
 
-- **Vercel / Netlify:** import the repo; build command `npm run build`, output directory `out`. Add `NEXT_PUBLIC_ENQUIRY_ENDPOINT` in the project's environment settings.
+- **Vercel / Netlify:** import the repo; build command `npm run build`, output directory `out`.
 - **cPanel / any web host:** upload the contents of `out/` to the web root.
 
 Make sure HTTPS is enabled on the final domain (`www.trensleektravels.com`).
@@ -88,9 +105,7 @@ public/images/         Photography as WebP, 800px (-sm) and 1600px versions
 These are marked on the site with "To confirm" / "Draft" tags:
 
 - Approval of the drafted service copy (Escort Services is now written as vehicle escorts and convoys)
-- Portraits and biographies for Miss Tamedun and Miss Lagbaja (the other four are done); confirmation of Miss Lagbaja's name
+- Boluwatife Adeniyi's course of study
 - Official social media profile URLs (links currently open a platform search) in `src/lib/site.ts`
-- Legal review of the drafted privacy notice (`src/app/privacy/page.tsx`), including retention periods and whether to name a Data Protection Officer
 - Official logo / brand colour values (the logo in the site is a concept)
 - Partner logos and confirmation of partnership status
-- Enquiry delivery endpoint (see Configuration)
