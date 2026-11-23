@@ -178,3 +178,10 @@ html,body{max-width:100%;overflow-x:hidden}
 .tm2-n{box-shadow:0 2px 10px rgba(7,26,58,.18);border:1px solid rgba(7,26,58,.08)}
 /* Per-portrait framing: keep the top of the head inside the frame */
 .tm2-ph img[src*="team-bukola"]{object-position:center 4%}
+
+/* Initials portrait for team members whose photo is still to come */
+.tm2-mono{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(120% 90% at 30% 20%,#1552B8 0%,#0B2A5B 55%,#071A3A 100%)}
+.tm2-mono::before{content:"";position:absolute;width:150%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.08);box-shadow:0 0 0 48px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}
+.tm2-mono span{position:relative;font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:clamp(72px,8vw,112px);letter-spacing:-.02em;color:#fff;transition:transform .9s var(--ease)}
+.tm2-mono::after{content:"";position:absolute;left:50%;bottom:22%;width:36px;height:2px;margin-left:-18px;background:var(--red)}
+.tm2:hover .tm2-mono span{transform:scale(1.06)}

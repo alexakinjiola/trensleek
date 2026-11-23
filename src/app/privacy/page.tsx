@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import PageHero from "@/components/PageHero";
-import { Icon, Tbc } from "@/components/primitives";
+import { Icon } from "@/components/primitives";
 import { SITE, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -12,9 +12,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy/" },
 };
 
-// DRAFT: prepared for Trensleek's review. Have it checked by a qualified data protection
-// adviser before publication. Items wrapped in <Tbc> need a decision from Trensleek.
-const LAST_UPDATED = "13 November 2026";
+// Content confirmed by Trensleek (November 2026). Update LAST_UPDATED whenever the notice changes.
+const LAST_UPDATED = "23 November 2026";
 
 type Section = { id: string; title: string; body: ReactNode };
 
@@ -164,13 +163,13 @@ const SECTIONS: Section[] = [
         <p>We keep personal data only for as long as we need it for the purposes above. As a guide:</p>
         <ul className="legal-list">
           <li>
-            Enquiries that do not lead to a booking: <Tbc>12 months</Tbc> after our last contact.
+            Enquiries that do not lead to a booking: 12 months after our last contact.
           </li>
           <li>
-            Booking and transaction records: <Tbc>6 years</Tbc>, to meet tax and accounting requirements.
+            Booking and transaction records: 6 years, to meet tax and accounting requirements.
           </li>
           <li>
-            Job applications: <Tbc>12 months</Tbc> after the recruitment decision, unless you ask us to delete it sooner.
+            Job applications: 12 months after the recruitment decision, unless you ask us to delete it sooner.
           </li>
         </ul>
         <p>When we no longer need information, we delete it or anonymise it securely.</p>
@@ -281,9 +280,6 @@ const SECTIONS: Section[] = [
             </li>
           ))}
         </ul>
-        <p className="small muted">
-          <Tbc>To confirm</Tbc> Trensleek to confirm whether a named Data Protection Officer should be listed here.
-        </p>
       </>
     ),
   },
@@ -330,7 +326,6 @@ export default function PrivacyPage() {
               <p>
                 <strong>Last updated:</strong> {LAST_UPDATED}
               </p>
-              <Tbc>Draft for Trensleek&rsquo;s legal review</Tbc>
             </div>
             {SECTIONS.map((s, i) => (
               <article className="legal-sec" id={s.id} key={s.id} aria-labelledby={`${s.id}-h`}>
