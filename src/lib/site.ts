@@ -16,14 +16,14 @@ export const SITE = {
   careersEmail: "trensleekcareers@gmail.com",
   offices: [
     {
-      city: "Ogun State",
-      lines: ["1 Praisehill Estate, Arepo,", "Ogun State, Nigeria"],
-      query: "1 Praisehill Estate, Arepo, Ogun State, Nigeria",
+      city: "Abuja",
+      lines: ["No. 12, Linda Chalker Crescent,", "Asokoro, Abuja, Nigeria"],
+      query: "No. 12, Linda Chalker Crescent, Asokoro, Abuja, Nigeria",
     },
     {
-      city: "Abuja",
-      lines: ["590 David Jemibewon Crescent,", "Apo Legislative Quarters, Abuja, Nigeria"],
-      query: "590 David Jemibewon Crescent, Apo Legislative Quarters, Abuja, Nigeria",
+      city: "Lagos",
+      lines: ["Block E1 086, HFP Eastline Complex,", "Abraham Adesanya, Ajah, Lagos, Nigeria"],
+      query: "Block E1 086, HFP Eastline Complex, Abraham Adesanya, Ajah, Lagos, Nigeria",
     },
   ],
 } as const;

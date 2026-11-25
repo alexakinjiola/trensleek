@@ -9,7 +9,7 @@ import { SITE, mapsLink, whatsappLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Trensleek Travels and Tour: chat on WhatsApp (+234 907 3108 020), send an enquiry, or visit our offices in Ogun State and Abuja.",
+    "Contact Trensleek Travels and Tour: chat on WhatsApp (+234 907 3108 020), send an enquiry, or visit our offices in Abuja and Lagos.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -36,7 +36,7 @@ export default function ContactPage() {
           </>
         }
         crumbs={[{ label: "Contact Us" }]}
-        card={{ tag: "Visit us", title: "Offices in Ogun State and Abuja", href: "#offices", image: "lagos" }}
+        card={{ tag: "Visit us", title: "Offices in Abuja and Lagos", href: "#offices", image: "lagos" }}
       />
 
       <section className="sec" id="enquire" aria-label="Ways to enquire">
