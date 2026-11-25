@@ -25,6 +25,11 @@ export const SITE = {
       lines: ["Block E1 086, HFP Eastline Complex,", "Abraham Adesanya, Ajah, Lagos, Nigeria"],
       query: "Block E1 086, HFP Eastline Complex, Abraham Adesanya, Ajah, Lagos, Nigeria",
     },
+    {
+      city: "Ogun State",
+      lines: ["14, Abiola Bolaji Street, Praisehill Estate,", "Arepo, Ogun State, Nigeria"],
+      query: "14, Abiola Bolaji Street, Praisehill Estate, Arepo, Ogun State, Nigeria",
+    },
   ],
 } as const;
 

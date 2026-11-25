@@ -11,7 +11,7 @@ export const DEFAULT_QUICK: QuickItem[] = [
   { icon: "chat", label: "WhatsApp", value: "Chat with us now", href: whatsappLink(), external: true },
   { icon: "call", label: "Call us", value: SITE.phoneDisplay, href: SITE.phoneHref },
   { icon: "mail", label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
-  { icon: "location_on", label: "Offices", value: "Abuja & Lagos", href: "/contact#offices" },
+  { icon: "location_on", label: "Offices", value: "Abuja, Lagos & Ogun", href: "/contact#offices" },
 ];
 
 type HeroCard = { tag: string; title: string; href: string; image: string; external?: boolean };

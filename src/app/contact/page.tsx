@@ -9,7 +9,7 @@ import { SITE, mapsLink, whatsappLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Trensleek Travels and Tour: chat on WhatsApp (+234 907 3108 020), send an enquiry, or visit our offices in Abuja and Lagos.",
+    "Contact Trensleek Travels and Tour: chat on WhatsApp (+234 907 3108 020), send an enquiry, or visit our offices in Abuja, Lagos and Ogun State.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -36,7 +36,7 @@ export default function ContactPage() {
           </>
         }
         crumbs={[{ label: "Contact Us" }]}
-        card={{ tag: "Visit us", title: "Offices in Abuja and Lagos", href: "#offices", image: "lagos" }}
+        card={{ tag: "Visit us", title: "Offices in Abuja, Lagos and Ogun State", href: "#offices", image: "lagos" }}
       />
 
       <section className="sec" id="enquire" aria-label="Ways to enquire">
@@ -104,9 +104,7 @@ export default function ContactPage() {
                 <Icon name="location_on" style={{ fontSize: 30, color: "var(--red)" }} />
                 <h3 className="serif h3">{o.city}</h3>
                 <address style={{ fontStyle: "normal" }} className="muted">
-                  {o.lines[0]}
-                  <br />
-                  {o.lines[1]}
+                  <span className="addr-l">{o.lines[0]}</span> <span className="addr-l">{o.lines[1]}</span>
                 </address>
                 <a className="tlink" style={{ alignSelf: "flex-start" }} href={mapsLink(o.query)} target="_blank" rel="noopener">
                   Get directions
