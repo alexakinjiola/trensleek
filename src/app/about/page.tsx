@@ -121,7 +121,7 @@ export default function AboutPage() {
               affordable tickets and a focus on client safety.
             </p>
             <p className="muted">
-              From offices in Ogun State and Abuja, we help individuals and organisations with local and international
+              From offices in Abuja, Lagos and Ogun State, we help individuals and organisations with local and international
               flights, private jet hire, hotel reservations and travel advice. Every enquiry is handled personally.
             </p>
           </div>

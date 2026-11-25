@@ -185,3 +185,10 @@ html,body{max-width:100%;overflow-x:hidden}
 .tm2-mono span{position:relative;font-family:var(--font-serif);font-style:italic;font-weight:500;font-size:clamp(72px,8vw,112px);letter-spacing:-.02em;color:#fff;transition:transform .9s var(--ease)}
 .tm2-mono::after{content:"";position:absolute;left:50%;bottom:22%;width:36px;height:2px;margin-left:-18px;background:var(--red)}
 .tm2:hover .tm2-mono span{transform:scale(1.06)}
+
+/* Three offices: one row on desktop, stacked below 900px */
+.offices{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.office{padding:36px 32px}
+@media (max-width:900px){.offices{grid-template-columns:1fr;gap:16px}.office{padding:28px 22px}}
+.addr-l{display:block}
+@media (max-width:1240px){.addr-l{display:inline}}
