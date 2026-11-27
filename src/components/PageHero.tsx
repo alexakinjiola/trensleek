@@ -61,7 +61,7 @@ export function QuickBar({ items = DEFAULT_QUICK }: { items?: QuickItem[] }) {
               </span>
               <span>
                 <small>{q.label}</small>
-                <strong>{q.value}</strong>
+                <strong>{q.value.includes("@") ? <>{q.value.split("@")[0]}<wbr />@{q.value.split("@")[1]}</> : q.value}</strong>
               </span>
             </Anchor>
           ))}
