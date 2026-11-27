@@ -192,3 +192,11 @@ html,body{max-width:100%;overflow-x:hidden}
 @media (max-width:900px){.offices{grid-template-columns:1fr;gap:16px}.office{padding:28px 22px}}
 .addr-l{display:block}
 @media (max-width:1240px){.addr-l{display:inline}}
+
+/* Quick contact strip: the email column takes the width it needs, so it never breaks mid-word.
+   Text only wraps at spaces, or before the "@" on the narrowest phones. */
+.qi strong{overflow-wrap:normal;word-break:normal}
+.qgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto minmax(0,1fr)}
+@media (max-width:1280px){.qi{padding:8px 16px;gap:12px}.qi .ic{width:46px;height:46px}.qi strong{font-size:15px}}
+@media (max-width:1080px){.qgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.qi{padding:10px 18px}}
+@media (max-width:760px){.qgrid{grid-template-columns:1fr}.qi,.qi+.qi{padding:12px 10px}}
