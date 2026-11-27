@@ -41,7 +41,7 @@ npm run build    # static site written to ./out
 ## Enquiry form (Formspree)
 
 The form posts to Trensleek's Formspree form, `https://formspree.io/f/xljbonzw` (set in `src/lib/site.ts`).
-Formspree emails every submission to the address configured on that form: **trensleekglobaltravels@gmail.com**.
+Formspree emails every submission to the address configured on that form: **trensleektravels@gmail.com**.
 
 Each email arrives with:
 
@@ -60,10 +60,10 @@ NEXT_PUBLIC_ENQUIRY_ENDPOINT=https://formspree.io/f/your-form-id
 
 ### Keeping enquiries out of spam
 
-In Formspree (Form → Settings): set the target email to `trensleekglobaltravels@gmail.com` and verify it;
+In Formspree (Form → Settings): set the target email to `trensleektravels@gmail.com` and verify it;
 optionally add `trensleektravels.com` (and the Vercel domain) under allowed domains.
 
-In Gmail (trensleekglobaltravels@gmail.com):
+In Gmail (trensleektravels@gmail.com):
 
 1. Add Formspree's sending address (shown on the first notification, e.g. `noreply@formspree.io`) to Contacts.
 2. Search `from:formspree.io`, choose **Create filter**, tick **Never send it to Spam**, **Always mark it as important**

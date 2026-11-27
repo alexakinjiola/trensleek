@@ -12,7 +12,7 @@ export const SITE = {
   phoneDisplay: "+234 907 3108 020",
   phoneHref: "tel:+2349073108020",
   whatsappNumber: "2349073108020",
-  email: "trensleekglobaltravels@gmail.com",
+  email: "trensleektravels@gmail.com",
   careersEmail: "trensleekcareers@gmail.com",
   offices: [
     {
@@ -36,7 +36,7 @@ export const SITE = {
 /**
  * Where the enquiry form posts: Trensleek's Formspree form. Formspree emails every
  * submission to the address set on the form in the Formspree dashboard
- * (trensleekglobaltravels@gmail.com). NEXT_PUBLIC_ENQUIRY_ENDPOINT overrides it if ever needed.
+ * (trensleektravels@gmail.com). NEXT_PUBLIC_ENQUIRY_ENDPOINT overrides it if ever needed.
  * Success is only shown when Formspree confirms receipt; failures keep the visitor's entries.
  */
 export const ENQUIRY_ENDPOINT = process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT || "https://formspree.io/f/xljbonzw";
