@@ -36,10 +36,10 @@ export const SITE = {
 /**
  * Where the enquiry form posts: Trensleek's Formspree form. Formspree emails every
  * submission to the address set on the form in the Formspree dashboard
- * (trensleektravels@gmail.com). NEXT_PUBLIC_ENQUIRY_ENDPOINT overrides it if ever needed.
+ * (trensleeksupport@gmail.com). NEXT_PUBLIC_ENQUIRY_ENDPOINT overrides it if ever needed.
  * Success is only shown when Formspree confirms receipt; failures keep the visitor's entries.
  */
-export const ENQUIRY_ENDPOINT = process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT || "https://formspree.io/f/xljbonzw";
+export const ENQUIRY_ENDPOINT = process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT || "https://formspree.io/f/mrpqdvee";
 
 // TODO(Trensleek): replace with official profile URLs once supplied.
 const Q = encodeURIComponent("Trensleek Travels");
